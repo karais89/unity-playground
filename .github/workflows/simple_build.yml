@@ -1,4 +1,4 @@
-name: Actions 😎
+name: Simple Actions 😎
 
 on: [push, pull_request]
 
