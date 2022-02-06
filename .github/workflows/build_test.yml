@@ -42,7 +42,7 @@ jobs:
       ###########################
       #          Build          #
       ###########################
-      - uses: game-ci/unity-builder@v2.0-alpha-13
+      - uses: game-ci/unity-builder@v2
         with:
           projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}
