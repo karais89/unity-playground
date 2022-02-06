@@ -1,0 +1,59 @@
+name: Builds
+
+on: [push, pull_request]
+
+env:
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+  
+jobs:
+  buildForAllPlatforms:
+    name: Build for ${{ matrix.targetPlatform }} on version ${{ matrix.unityVersion }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        projectPath:
+          - .
+        unityVersion:
+          - 2020.3.27f1
+        targetPlatform:
+          - Android # Build an Android .apk.
+          - WebGL
+          
+    steps:
+      ###########################
+      #         Checkout        #
+      ###########################
+      - uses: actions/checkout@v2
+        with:
+          lfs: true
+
+      ###########################
+      #          Cache          #
+      ###########################
+      - uses: actions/cache@v2
+        with:
+          path: ${{ matrix.projectPath }}/Library
+          key: Library-${{ matrix.projectPath }}-${{ matrix.targetPlatform }}
+          restore-keys: |
+            Library-${{ matrix.projectPath }}-
+            Library-
+
+      ###########################
+      #          Build          #
+      ###########################
+      - uses: game-ci/unity-builder@v2.0-alpha-13
+        with:
+          projectPath: ${{ matrix.projectPath }}
+          unityVersion: ${{ matrix.unityVersion }}
+          targetPlatform: ${{ matrix.targetPlatform }}
+          customParameters: -profile SomeProfile -someBoolean -someValue exampleValue
+
+      ###########################
+      #          Upload         #
+      ###########################
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Build (${{ matrix.unityVersion }})
+          path: build
+          retention-days: 14
