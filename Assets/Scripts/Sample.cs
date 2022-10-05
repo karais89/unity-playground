@@ -10,5 +10,6 @@ public class Sample : MonoBehaviour
         Debug.Log("Hello World!");
         Debug.Log("코드 작업");
         Debug.Log("코드 작업1");
+        Debug.Log("코드 작업2");
     }
 }
