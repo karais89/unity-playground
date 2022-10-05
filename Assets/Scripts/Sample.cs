@@ -8,5 +8,6 @@ public class Sample : MonoBehaviour
     void Start()
     {
         Debug.Log("Hello World!");
+        Debug.Log("코드 작업");
     }
 }
