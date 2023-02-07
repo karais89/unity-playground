@@ -1,0 +1,31 @@
+ManifestFileVersion: 0
+CRC: 3128440350
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 7f280d8ebfd10d000ddc803828914330
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: a4c4aa948f478cf925da64d4ebbb2636
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 136
+  Script: {instanceID: 0}
+Assets:
+- Assets/Example/AssetBundles/Cylinder/CylinderMat.mat
+- Assets/Example/AssetBundles/Cylinder/Cylinder.prefab
+Dependencies: []

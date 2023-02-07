@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 2495245015
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: earth
+      Dependencies: {}
+    Info_1:
+      Name: cylinder
+      Dependencies: {}
+    Info_2:
+      Name: capsule
+      Dependencies: {}
+    Info_3:
+      Name: particle
+      Dependencies: {}
+    Info_4:
+      Name: cube
+      Dependencies: {}
